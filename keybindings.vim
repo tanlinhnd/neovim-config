@@ -1,38 +1,43 @@
-inoremap tn <ESC>
+""" bind SPC instead of \ like emacs
+let mapleader="\<Space>"
 
-let mapleader=" "
+""" Clear highlight
+nnoremap <F3> :noh<CR>
+
+""" map qq to escape
+:imap qq <Esc>
+
+""" Disable arrow button
+nnoremap <Left> :echoe "Use h plz"<CR>
+nnoremap <Right> :echoe "Use l plz"<CR>
+nnoremap <Up> :echoe "Use h plz"<CR>
+nnoremap <Down> :echoe "Use k plz"<CR>
 
 """ save and quit
-nnoremap <Leader>s :w<CR>
+nnoremap <Leader>fs :w<CR>
 nnoremap <Leader>q :q<CR>
-nnoremap <Leader>sq :wq<CR>
+nnoremap <Leader>wq :wq<CR>
 
 """ dotfile shortcuts
 nnoremap <Leader><Leader>e :e  $MYVIMRC<CR>
 nnoremap <Leader><Leader>r :so $MYVIMRC<CR>
 
 """ windows management
-nnoremap <Leader>ll :vsplit<CR>
-nnoremap <Leader>kk :split<CR>
-nnoremap <Leader>h :wincmd h<CR>
-nnoremap <Leader>l :wincmd l<CR>
-nnoremap <Leader>k :wincmd k<CR>
-nnoremap <Leader>j :wincmd j<CR>
-nnoremap <Leader>w= :wincmd =<CR>
+nnoremap <Leader>w/ :vsplit<CR>
+nnoremap <Leader>w- :split<CR>
 
-""" buffers/tags/files management
-nnoremap <Leader>bb :Clap! buffers<CR>
-nnoremap <Leader>tt :Clap! tags<CR>
-nnoremap <Leader>ff :Clap! files<CR>
-nnoremap <Leader>gg :Clap! grep<CR>
-nnoremap <Leader>fw :Clap! grep ++query=<cword><CR>
+""" buffers/files management
+nnoremap <Leader>pb :Clap! buffers<CR>
+nnoremap <Leader>ps :Clap! blines<CR>
+nnoremap <Leader>pf :Clap! files<CR>
+nnoremap <Leader>bd :bd<CR>
+nnoremap <Leader><TAB> :bprevious<CR>
 
 """ floating terminal
 nnoremap <Leader>at :call FloatTerm()<CR>
 
 """ NERDTree
-nnoremap <Leader>n :NERDTree<CR>
-nnoremap <Leader>f :NERDTreeFind<CR>
+nnoremap <Leader>ft :NERDTreeToggle<CR>
 
 """ snippets
 let g:UltiSnipsExpandTrigger="<c-tab>"
@@ -41,6 +46,14 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" NerdCommenter
+let g:NERDSpaceDelims = 1
+
+""" Multi select
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
 
 """ coc
 " Using CocList
@@ -76,3 +89,7 @@ nmap <leader>f <Plug>(coc-format-selected)
 " Use <C-d> for select selections ranges
 nmap <silent> <C-d> <Plug>(coc-range-select)
 xmap <silent> <C-d> <Plug>(coc-range-select)
+
+""" LSP support
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1

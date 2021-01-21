@@ -11,10 +11,12 @@ Plug 'preservim/nerdcommenter'
 " LSP support
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-denite'
+Plug 'hashivim/vim-terraform'
 
 " Navigation
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
+Plug 'terryma/vim-multiple-cursors'
 
 " Display
 Plug 'NLKNguyen/papercolor-theme'
@@ -27,6 +29,9 @@ Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 
 " Source code analysis
 Plug 'nvim-treesitter/nvim-treesitter'
+
+" Themes
+Plug 'KeitaNakamura/neodark.vim'
 
 call plug#end()
 

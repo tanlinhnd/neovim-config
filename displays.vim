@@ -1,6 +1,6 @@
 """ ColorScheme setting
-set background=light
-colorscheme PaperColor
+"set background=light
+colorscheme neodark
 
 """ Other default UI configuration
 set colorcolumn=100,120
