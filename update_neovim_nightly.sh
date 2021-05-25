@@ -1,9 +1,12 @@
 #!/bin/bash
 
 # Navigate to neovim folder
-cd $HOME/src/contribute/tools/neovim/
+mkdir -p $HOME/src/contribute/tools
+cd $HOME/src/contribute/tools
+git clone https://github.com/neovim/neovim.git
 
 # Retrieve latest version of nightly neovim
+cd neovim
 git fetch --all --tags -f --prune
 git checkout tags/nightly
 

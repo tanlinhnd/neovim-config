@@ -60,6 +60,3 @@ set clipboard+=unnamedplus
 
 """ Remove unwanted trailing whitespaces
 autocmd BufWritePre * %s/\s\+$//e
-
-""" Set default python3 path
-let g:python_host_prog = '/home/linhnguyen/anaconda3/envs/neovim/bin/python'
